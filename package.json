@@ -1,0 +1,23 @@
+{
+  "name": "date-picker",
+  "version": "0.0.7",
+  "description": "Plugin for datepick.",
+  "main": "DatePicker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SandLZ/DatePicker.git"
+  },
+  "keywords": [
+    "datepicker",
+    "cordova plugin"
+  ],
+  "author": "zliu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SandLZ/DatePicker/issues"
+  },
+  "homepage": "https://github.com/SandLZ/DatePicker#readme"
+}
