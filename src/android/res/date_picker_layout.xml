@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="#ffffff"
+              android:orientation="vertical">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff">
+
+                <Button
+                        android:id="@+id/datePicker_cancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:background="@null"
+                        android:text="取消"
+                        android:textColor="#007AFF"
+                        android:textSize="16dp" />
+
+                <Button
+                        android:id="@+id/datePicker_sure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="16dp"
+                        android:background="@null"
+                        android:text="确定"
+                        android:textColor="#007AFF"
+                        android:textSize="16dp" />
+
+                <RelativeLayout
+                        android:id="@+id/date_picker_model"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="#ffffff"
+                        android:visibility="gone">
+
+                        <Button
+                                android:id="@+id/datePicker_type_date"
+                                android:layout_width="40dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="16dp"
+                                android:background="@drawable/date_blue_bg"
+                                android:text="日期"
+                                android:textColor="#fff"
+                                android:textSize="12dp" />
+
+                        <Button
+                                android:id="@+id/datePicker_type_time"
+                                android:layout_width="40dp"
+                                android:layout_height="30dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_toRightOf="@id/datePicker_type_date"
+                                android:background="@drawable/date_black_bg"
+                                android:text="时间"
+                                android:textColor="#000"
+                                android:textSize="12dp" />
+                </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+                android:id="@+id/datepicker_linear_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <com.plugin.datepicker.NumberPickerView
+                        android:id="@+id/year_picker"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:padding="16dp"
+                        app:npv_Week="false"
+                        app:npv_TextArray="@array/year_display"
+                        app:npv_DividerColor="#FFB412"
+                        app:npv_HintText="年"
+                        app:npv_TextColorHint="#FFB412"
+                        app:npv_ShowCount="3"
+                        app:npv_TextSizeNormal="16sp"
+                        app:npv_TextSizeSelected="20sp"
+                        app:npv_RespondChangeOnDetached="false"
+                        app:npv_WrapSelectorWheel="true"/>
+
+                <com.plugin.datepicker.NumberPickerView
+                        android:id="@+id/month_picker"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        app:npv_DividerColor="#FFB412"
+                        app:npv_TextColorHint="#FFB412"
+                        app:npv_Week="false"
+                        app:npv_TextArray="@array/month_display"
+                        app:npv_HintText="月"
+                        app:npv_TextSizeNormal="16sp"
+                        app:npv_RespondChangeOnDetached="false"
+                        app:npv_TextSizeSelected="20sp"
+                        app:npv_WrapSelectorWheel="true"
+                        android:padding="16dp" />
+
+                <com.plugin.datepicker.NumberPickerView
+                        android:id="@+id/day_picker"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="24dp"
+                        app:npv_TextArray="@array/day_display"
+                        android:layout_weight="1"
+                        app:npv_Week="false"
+                        app:npv_DividerColor="#FFB412"
+                        app:npv_TextColorHint="#FFB412"
+                        app:npv_HintText="日"
+                        app:npv_TextSizeNormal="16sp"
+                        app:npv_TextSizeSelected="20sp"
+                        app:npv_WrapSelectorWheel="true"
+                        app:npv_RespondChangeOnDetached="false"
+                        android:padding="16dp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:id="@+id/datepicker_linear_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <com.plugin.datepicker.NumberPickerView
+                        android:id="@+id/hours_picker"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:padding="16dp"
+                        app:npv_Week="false"
+                        app:npv_TextArray="@array/hour_display"
+                        app:npv_DividerColor="#FFB412"
+                        app:npv_TextColorHint="#FFB412"
+                        app:npv_TextSizeNormal="16sp"
+                        app:npv_TextSizeSelected="20sp"
+                        app:npv_WrapSelectorWheel="true"
+                        app:npv_RespondChangeOnDetached="false"
+                        app:npv_HintText="时"/>
+
+                <com.plugin.datepicker.NumberPickerView
+                        android:id="@+id/minutes_picker"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:padding="16dp"
+                        app:npv_Week="false"
+                        app:npv_TextArray="@array/minute_display"
+                        app:npv_DividerColor="#FFB412"
+                        app:npv_TextColorHint="#FFB412"
+                        app:npv_TextSizeNormal="16sp"
+                        app:npv_TextSizeSelected="20sp"
+                        app:npv_WrapSelectorWheel="true"
+                        app:npv_RespondChangeOnDetached="false"
+                        app:npv_HintText="分"/>
+
+                <com.plugin.datepicker.NumberPickerView
+                        android:id="@+id/second_picker"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_weight="1"
+                        android:padding="16dp"
+                        app:npv_Week="false"
+                        app:npv_TextArray="@array/minute_display"
+                        app:npv_DividerColor="#FFB412"
+                        app:npv_TextColorHint="#FFB412"
+                        app:npv_TextSizeNormal="16sp"
+                        app:npv_TextSizeSelected="20sp"
+                        app:npv_WrapSelectorWheel="true"
+                        app:npv_RespondChangeOnDetached="false"
+                        app:npv_HintText="秒"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/datepicker_linear_week"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+                <com.plugin.datepicker.NumberPickerView
+                    android:id="@+id/week_picker"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="1"
+                    android:padding="16dp"
+                    app:npv_Week="true"
+                    app:npv_DividerColor="#FFB412"
+                    app:npv_HintText=""
+                    app:npv_TextColorHint="#FFB412"
+                    app:npv_ShowCount="3"
+                    app:npv_TextSizeNormal="16sp"
+                    app:npv_TextSizeSelected="20sp"
+                    app:npv_RespondChangeOnDetached="false"
+                    app:npv_WrapSelectorWheel="true"/>
+
+
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="6px"
+                android:layout_marginTop="14dp"
+                android:background="#ff33b5e5"></TextView>
+
+</LinearLayout>
