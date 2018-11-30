@@ -1,6 +1,6 @@
 {
   "name": "date-picker",
-  "version": "0.0.7",
+  "version": "0.1.1",
   "description": "Plugin for datepick.",
   "main": "DatePicker.js",
   "scripts": {

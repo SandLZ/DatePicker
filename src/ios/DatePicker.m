@@ -382,6 +382,17 @@
     } else {
         [dateFormatter setDateFormat:@"yyyy-dd-MM HH:mm:ss"];
     }
+    if (nil == date) {
+        if (self.datePicker) {
+            [self.datePicker dismiss];
+        }
+        if (self.timePicker) {
+            [self.timePicker dismiss];
+        }
+        NSString *jsCallback = @"datePicker._dateSelectionCanceled();";
+        [self.commandDelegate evalJs:jsCallback];
+        return;
+    }
     NSString *value = [dateFormatter stringFromDate:date];
     NSMutableString *result = [NSMutableString stringWithString:value];
     // 日期 + 时间的情况
